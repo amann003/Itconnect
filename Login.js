@@ -59,7 +59,7 @@
 
             setTimeout(()=>
         {
-            window.location.href='DashBoard.html';
+            window.location.href='index.html';
         },1000);
         }
 
