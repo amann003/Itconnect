@@ -1194,7 +1194,7 @@ async function loadDashboardAmcCounts() {
         const userData = JSON.parse(localStorage.getItem('userData'));
         if (!userData) return;
 
-        const response = await fetch('', {
+        const response = await fetch('http://10.111.225.106/EssAnroidUAT/Api/PWDManager/GetProductlicenseinfo', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -1730,7 +1730,7 @@ async function loadAmcRecords() {
     amcList.innerHTML = '<div style="color:white;padding:20px;text-align:center;">Loading AMC records...</div>';
 
     try {
-        const response = await fetch('', {
+        const response = await fetch('http://10.111.225.106/EssAnroidUAT/Api/PWDManager/GetProductlicenseinfo', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -2016,7 +2016,7 @@ document.getElementById('addPasswordForm').addEventListener('submit', async func
 
         console.log('Submitting password data:', apiData);
 
-        const response = await fetch('', {
+        const response = await fetch('http://10.111.225.106/EssAnroidUAT/Api/PWDManager/CreateCredential', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -2079,14 +2079,14 @@ async function loadCategoriesAndSubCategories() {
     try {
         // Replace with your ACTUAL API URLs
         const [categoryResponse, subCategoryResponse] = await Promise.all([
-            fetch('', {
+            fetch('http://10.111.225.106/EssAnroidUAT/Api/PWDManager/GetCategoryList', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': userData.key
                 }
             }),
-            fetch('', {
+            fetch('http://10.111.225.106/EssAnroidUAT/Api/PWDManager/GetProductList', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -2275,7 +2275,7 @@ async function loadProductsForAmc() {
             throw new Error('User authentication required');
         }
         
-        const response = await fetch('', {
+        const response = await fetch('http://10.111.225.106/EssAnroidUAT/Api/PWDManager/GetProductList', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
