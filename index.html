@@ -966,7 +966,13 @@ select option {
         </button>
     </div>
 
-    <input type="text" id="amcSearch" placeholder="Search Item or Vendor" style="width:25%;padding:8px;font-size:16px;margin-bottom:20px;border-radius:5px;border:1px solid #746f6f;">
+    <input type="text" id="amcSearch" placeholder="Search Item or Vendor" style="
+          width:25%;
+          padding:8px;
+          font-size:16px;
+          margin-bottom:20px;
+          border-radius:5px;
+          border:1px solid #746f6f;">
     <div id="amcList"></div>
 
 
@@ -1194,7 +1200,7 @@ async function loadDashboardAmcCounts() {
         const userData = JSON.parse(localStorage.getItem('userData'));
         if (!userData) return;
 
-        const response = await fetch('http://10.111.225.106/EssAnroidUAT/Api/PWDManager/GetProductlicenseinfo', {
+        const response = await fetch('https://ess.bhagwati.co/EssAnroidUAT/Api/PWDManager/GetProductlicenseinfo', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
